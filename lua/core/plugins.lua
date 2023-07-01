@@ -26,6 +26,14 @@ local plugins = {
 
 	{ "echasnovski/mini.indentscope", version = "*" }, -- indentation
 
+	{
+		"goolord/alpha-nvim",
+		lazy = false,
+		config = function()
+			require("core.plugin_config.alpha")
+		end,
+	},
+
 	"numToStr/Comment.nvim", -- commenting with gc
 
 	-- highlighter for TODO & FIX etc... comment
