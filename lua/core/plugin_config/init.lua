@@ -1,5 +1,5 @@
 require("core.plugin_config.autopairs")
-require("core.plugin_config.blankline")
+require("core.plugin_config.indentscope")
 require("core.plugin_config.bufferline")
 require("core.plugin_config.colorscheme")
 require("core.plugin_config.comment")
