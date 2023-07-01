@@ -24,7 +24,7 @@ local plugins = {
 
 	"nvim-treesitter/nvim-treesitter", -- treesitter
 
-	"lukas-reineke/indent-blankline.nvim", -- indentation
+	{ "echasnovski/mini.indentscope", version = "*" }, -- indentation
 
 	"numToStr/Comment.nvim", -- commenting with gc
 
