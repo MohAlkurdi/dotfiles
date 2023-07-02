@@ -100,11 +100,3 @@ lspconfig["lua_ls"].setup({
 		},
 	},
 })
-
-lspconfig["ltex"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	cmd = { "ltex-ls" },
-	filetypes = { "markdown", "text", "html", "typescriptreact", "javascriptreact", "css" },
-	flags = { debounce_text_changes = 300 },
-})
