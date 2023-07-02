@@ -32,9 +32,11 @@ local plugins = {
 		config = function()
 			require("core.plugin_config.alpha")
 		end,
-	},
+	}, -- Dashboard
 
 	"numToStr/Comment.nvim", -- commenting with gc
+
+	"RRethy/vim-illuminate", -- highlighting other uses of the word under the cursor
 
 	-- highlighter for TODO & FIX etc... comment
 	{
