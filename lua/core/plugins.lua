@@ -22,6 +22,14 @@ local plugins = {
 
 	"nvim-lualine/lualine.nvim", -- statusline
 
+	{
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	}, -- Open Lazygit within neovim
+
 	"nvim-treesitter/nvim-treesitter", -- treesitter
 
 	{ "echasnovski/mini.indentscope", version = "*" }, -- indentation
