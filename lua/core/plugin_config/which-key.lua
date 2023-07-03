@@ -47,6 +47,7 @@ wk.register({
 			h = { "<C-w>s", "Split horizontally" },
 			e = { "<C-w>=", "Resize Split" },
 			x = { ":close<CR>", "Close Split" },
+			s = { ":setlocal spell!<CR>", "Set Spell" },
 		},
 	},
 })
