@@ -10,6 +10,7 @@ wk.register({
 			s = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
 			c = { "<cmd>Telescope grep_string<cr>", "Find String Under Cursor" },
 			b = { "<cmd>Telescope buffers<cr>", "Find Buffer" },
+			g = { ":LazyGit<CR>", "LazyGit" },
 		},
 		b = {
 			name = "+Buffer",
