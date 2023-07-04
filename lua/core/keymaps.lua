@@ -10,6 +10,8 @@ local keymap = vim.keymap -- for conciseness
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>")
 
+-- use <leader> w for fast save
+keymap.set("n", "<leader>w", ":write<CR>", { desc = "Save" })
 --------------------
 -- Plugin Keybinds
 ----------------------
