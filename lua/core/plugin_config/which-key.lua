@@ -40,6 +40,7 @@ wk.register({
 			d = { "<cmd>Lspsaga show_line_diagnostics<CR>", "Line Diagnostics" },
 			D = { "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Cursor Diagnostics" },
 			s = { ":LspRestart<CR>", "Restart LSP" },
+			w = { ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", "Change Word under cursor" },
 		},
 		s = {
 			name = "+Window Split",
