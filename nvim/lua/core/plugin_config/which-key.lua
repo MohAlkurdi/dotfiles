@@ -15,7 +15,6 @@ wk.register({
 		b = {
 			name = "+Buffer",
 			d = { "<cmd>bdelete<CR>", "Delete" },
-			p = { ":BufferLinePick<CR>", "Picker" },
 			c = { ":BufferLinePickClose<CR>", "Close" },
 		},
 		x = {
