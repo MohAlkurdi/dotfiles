@@ -1,0 +1,137 @@
+{
+  "workbench.productIconTheme": "icons-carbon",
+  "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.iconTheme": "icons",
+
+  "editor.fontFamily": "'Hack Nerd Font'",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  "editor.bracketPairColorization.enabled": false,
+  "editor.cursorStyle": "block",
+
+  "window.zoomLevel": 0.5,
+  "window.titleBarStyle": "custom",
+  "window.restoreWindows": "none",
+
+  // VIM settings
+  "vim.leader": "<Space>",
+  "vim.statusBarColorControl": false,
+  "vim.useSystemClipboard": true,
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Open file tree
+    {
+      "before": ["leader", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    // Move to the previous tab
+    {
+      "before": ["<S-h>"],
+      "commands": [":bprevious"]
+    },
+    // Move to the next tab
+    {
+      "before": ["<S-l>"],
+      "commands": [":bnext"]
+    },
+    //vertical  split
+    {
+      "before": ["leader", "v"],
+      "commands": [":vsplit"]
+    },
+    // horizontal split
+    {
+      "before": ["leader", "s"],
+      "commands": [":split"]
+    },
+    // Change focus
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    // Save
+    {
+      "before": ["leader", "w"],
+      "commands": [":w!"]
+    },
+    // Quit
+    {
+      "before": ["leader", "b", "d"],
+      "commands": [":q!"]
+    },
+    // Quick fix
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    // Search project files
+    {
+      "before": ["leader", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    // Format file
+    {
+      "before": ["leader", "p"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    // Hover
+    {
+      "before": ["<S-k>"],
+      "commands": ["editor.action.showHover"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    // Move selected lines while in visual mode
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    }
+  ],
+
+  "vim.insertModeKeyBindings": [
+    // return to normal mode
+    {
+      "before": ["j", "k"],
+      "after": ["<ESC>"]
+    }
+  ],
+
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "cSpell.diagnosticLevel": "Hint",
+}
