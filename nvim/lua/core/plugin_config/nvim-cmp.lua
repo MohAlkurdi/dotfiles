@@ -7,7 +7,7 @@ local lspkind = require("lspkind")
 
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
 require("luasnip/loaders/from_vscode").lazy_load()
---require("luasnip.loaders.from_vscode").lazy_load()
+-- require("luasnip.loaders.from_vscode").lazy_load()
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
@@ -28,10 +28,10 @@ cmp.setup({
 	}),
 	-- sources for autocompletion
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" }, -- lsp
+		-- { name = "nvim_lsp" }, -- lsp
 		{ name = "luasnip" }, -- snippets
-		{ name = "buffer" }, -- text within current buffer
-		{ name = "path" }, -- file system paths
+		-- { name = "buffer" }, -- text within current buffer
+		-- { name = "path" }, -- file system paths
 		{ name = "nvim_lsp_signature_help" }, -- function signature
 	}),
 	-- configure lspkind for vs-code like icons
