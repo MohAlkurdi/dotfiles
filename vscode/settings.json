@@ -103,6 +103,11 @@
     {
       "before": ["K"],
       "commands": ["editor.action.moveLinesUpAction"]
+    },
+    // Select match tags in visual mode
+    {
+      "before": ["S-5"],
+      "commands": ["editor.emmet.action.matchTag"]
     }
   ],
 
