@@ -50,3 +50,15 @@ autocmd!
 au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
 augroup END
 ]])
+
+-- better arabic text
+opt.termbidi = true
+
+-- disable continuation of comments
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		vim.opt.formatoptions:remove({ "c", "r", "o" })
+	end,
+	group = vim.api.nvim_create_augroup("General Settings", { clear = true }),
+	desc = "Disable New Line Comment",
+})
