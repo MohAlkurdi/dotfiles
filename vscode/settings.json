@@ -15,6 +15,8 @@
   "window.titleBarStyle": "custom",
   "window.restoreWindows": "none",
 
+  "explorer.compactFolders": false,
+
   // VIM settings
   "vim.leader": "<Space>",
   "vim.statusBarColorControl": false,
@@ -138,5 +140,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "cSpell.diagnosticLevel": "Hint",
+  "cSpell.diagnosticLevel": "Hint"
 }
