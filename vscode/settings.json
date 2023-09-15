@@ -3,13 +3,14 @@
   "workbench.colorTheme": "GitHub Dark",
   "workbench.iconTheme": "icons",
 
-  "editor.fontFamily": "'Hack Nerd Font'",
+  "editor.fontFamily": "Hack Nerd Font",
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
   "editor.cursorStyle": "block",
   "editor.lineHeight": 25,
-  "editor.cursorSurroundingLines": 16,
+  "editor.cursorSurroundingLines": 12,
+  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
 
   "window.zoomLevel": 0.5,
   "window.titleBarStyle": "custom",
@@ -21,13 +22,49 @@
   "vim.leader": "<Space>",
   "vim.statusBarColorControl": false,
   "vim.useSystemClipboard": true,
+  // Highlight on yank
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#77bdfb80",
+  "vim.highlightedyank.duration": 200,
 
-  "vim.normalModeKeyBindingsNonRecursive": [
+  "vim.normalModeKeyBindings": [
+    // Peek Definition
+    {
+      "before": ["g", "p", "d"],
+      "commands": ["editor.action.peekDefinition"]
+    },
+    //  Go to Implementations
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    // Peek Implementations
+    {
+      "before": ["g", "p", "i"],
+      "commands": ["editor.action.peekImplementation"]
+    },
+    // Go to References
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    // Go to Type Definition
+    {
+      "before": ["g", "t"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    // Peek Type Definition
+    {
+      "before": ["g", "p", "t"],
+      "commands": ["editor.action.peekTypeDefinition"]
+    },
     // Open file tree
     {
-      "before": ["leader", "e"],
-      "commands": ["workbench.action.toggleSidebarVisibility"]
-    },
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.view.explorer"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
     // Move to the previous tab
     {
       "before": ["<S-h>"],
@@ -40,12 +77,12 @@
     },
     //vertical  split
     {
-      "before": ["leader", "v"],
+      "before": ["leader", "s", "v"],
       "commands": [":vsplit"]
     },
     // horizontal split
     {
-      "before": ["leader", "s"],
+      "before": ["leader", "s", "h"],
       "commands": [":split"]
     },
     // Change focus
