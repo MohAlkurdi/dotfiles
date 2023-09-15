@@ -19,6 +19,8 @@
   "explorer.compactFolders": false,
 
   // VIM settings
+  "vim.easymotion": true,
+  "vim.surround": true,
   "vim.leader": "<Space>",
   "vim.statusBarColorControl": false,
   "vim.useSystemClipboard": true,
