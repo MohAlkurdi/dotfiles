@@ -67,6 +67,11 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig["intelephense"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure svelte server
 		lspconfig["svelte"].setup({
 			capabilities = capabilities,
@@ -89,13 +94,6 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-
-		-- configure graphql language server
-		-- lspconfig["graphql"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- 	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-		-- })
 
 		-- configure emmet language server
 		lspconfig["emmet_ls"].setup({
