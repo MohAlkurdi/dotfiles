@@ -1,0 +1,74 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+Plug 'machakann/vim-highlightedyank'
+
+"" My custom settings
+
+" Set leader key to space
+let g:mapleader = " "
+
+" Keep cursor in the middle of the screen
+set scrolloff=16
+
+" Use jk to exit insert mode
+inoremap jk <Esc>
+
+" Use <leader> w for fast save
+nnoremap <leader>w :write<CR>
+
+" Use J & K to move lines up and down
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Switch between buffers
+nnoremap <S-l> :bnext<CR>
+nnoremap <S-h> :bprevious<CR>
+
+
+" Line wrapping
+set nowrap
+
+" Search settings
+set ignorecase
+set smartcase
+set nohlsearch
+set incsearch
+
+" Backspace
+set backspace=indent,eol,start
+
+" Clipboard
+set clipboard+=unnamedplus
+
+" Code Action
+nmap gd <Action>(GotoDeclarationOnly)
+nmap gr <Action>(GotoRelated)
+nmap gs <Action>(GotoSuperMethod)
+nmap gt <Action>(GotoTypeDeclaration)
+nmap gy <Action>(GotoTest)
+
+" Find files
+map  <Leader>ff <Action>(GotoFile)
+" Generate
+nmap <Leader>cg <Action>(Generate)
+" Run class
+nmap <Leader>cr <Action>(RunClass)
+" Stop running class
+map <Leader>cs <Action>(Stop)
+
+" Terminal
+map <C-S-J> <Action>(ActivateTerminalToolWindow)
+
+
+" Pane vertically split/horizontally split/close
+map <Leader>sv <Action>(SplitVertically)
+map <Leader>sh <Action>(SplitHorizontally)
+map <C-BS> <Action>(Unsplit)
+
+" Comment
+map gc <Action>(CommentByLineComment)
