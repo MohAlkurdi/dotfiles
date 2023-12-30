@@ -30,6 +30,10 @@ eval "$(pyenv init -)"
 export JAVA_HOME="/home/moh/.jdks/temurin-17.0.9"
 export PATH="$PATH:$JAVA_HOME/bin"
 
+# Ignore case senstive words
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+autoload -Uz compinit && compinit
+
 # aliases
 alias pn=pnpm
 alias lg=lazygit
