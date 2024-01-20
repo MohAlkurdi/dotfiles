@@ -48,6 +48,7 @@ return {
 					D = { "<cmd>Telescope diagnostics bufnr=0<CR>", "Show buffer diagnostics" },
 					s = { ":LspRestart<CR>", "Restart LSP" },
 					w = { ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", "Change Word under cursor" },
+					o = { "<cmd>:%bd|e#|bd#<CR>", "Close other tabs" },
 				},
 				s = {
 					name = "+Window Split",
