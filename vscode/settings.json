@@ -1,46 +1,45 @@
 {
-    "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.sideBar.location": "right", 
+  "workbench.tree.enableStickyScroll": true,
+  "workbench.iconTheme": "symbols",
+  "workbench.startupEditor": "readme",
+  "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.activityBar.location": "top",
 
-    "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 0.5,
-    "window.restoreWindows": "none",
+  "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "custom",
+  "window.restoreWindows": "none",
 
-    "explorer.compactFolders": false,
+  "explorer.compactFolders": false,
 
-    "editor.fontSize": 12,
-    "editor.scrollbar.vertical": "hidden",
-    "editor.scrollbar.verticalScrollbarSize": 0,
-    "editor.fontFamily": "'Maple Mono', 'monospace', monospace",
-    "editor.formatOnSave": true,
-    "editor.minimap.enabled": false,
-    "editor.lineNumbers": "relative",
-    "editor.cursorStyle": "block",
-    "editor.lineHeight": 25,
-    "editor.cursorSurroundingLines": 12,
-    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+  "editor.fontSize": 15,
+  "editor.formatOnSave": true,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.fontFamily": "'Maple Mono', 'monospace', monospace",
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  "editor.cursorStyle": "block",
+  "editor.lineHeight": 35,
+  "editor.cursorSurroundingLines": 14,
+  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+  "editor.linkedEditing": true,
 
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
 
-    "security.workspace.trust.untrustedFiles": "newWindow",
-    "security.workspace.trust.startupPrompt": "never",
-    "security.workspace.trust.enabled": false,
-    
-    "terminal.external.linuxExec": "kitty",
-    "terminal.explorerKind": "both",
-    "terminal.sourceControlRepositoriesKind": "both",
-    "telemetry.telemetryLevel": "off",
-
+  "telemetry.telemetryLevel": "off",
   // VIM settings
   "vim.easymotion": true,
   "vim.surround": true,
   "vim.leader": "<Space>",
   "vim.statusBarColorControl": false,
   "vim.useSystemClipboard": true,
+  "vim.foldfix": true,
   // Highlight on yank
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#77bdfb80",
   "vim.highlightedyank.duration": 200,
-
   "vim.normalModeKeyBindings": [
     // Peek Definition
     {
@@ -124,8 +123,15 @@
     // Quit
     {
       "before": ["leader", "b", "d"],
-      "commands": [":q!"]
+      "commands": [":tabc"]
     },
+
+    // CLose other tabs
+    {
+      "before": ["leader", "c", "o"],
+      "commands": [":tabo"]
+    },
+
     // Quick fix
     {
       "before": ["<leader>", "c", "a"],
@@ -163,7 +169,6 @@
       "commands": ["editor.emmet.action.matchTag"]
     }
   ],
-
   "vim.insertModeKeyBindings": [
     // return to normal mode
     {
@@ -171,6 +176,28 @@
       "after": ["<ESC>"]
     }
   ],
-
-  "cSpell.diagnosticLevel": "Hint"
+  "cSpell.diagnosticLevel": "Hint",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+  },
+  "[blade]": {
+    "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+  },
+  "symbols.hidesExplorerArrows": false
 }
