@@ -40,6 +40,13 @@
     "command": "workbench.files.action.collapseExplorerFolders",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
   },
+  // Move to parent folder
+  {
+    "key": "shift+p",
+    "command": "breadcrumbs.focusPrevious",
+    "when": "breadcrumbsActive && breadcrumbsVisible"
+  },
+
   // Terminal navigation
   {
     "key": "ctrl+shift+j",
@@ -60,6 +67,7 @@
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
   },
+
   // Down Motion
   {
     "key": "ctrl+j",
@@ -86,6 +94,7 @@
     "command": "workbench.action.quickOpenSelectNext",
     "when": "inQuickOpen"
   },
+
   // Up Motion
   {
     "key": "ctrl+k",
@@ -112,12 +121,14 @@
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inQuickOpen"
   },
+
   // Open editor context menu
   {
     "key": "ctrl+o",
     "command": "editor.action.showContextMenu",
     "when": "editorTextFocus"
   },
+
   // Extra
   {
     "key": "ctrl+z",
