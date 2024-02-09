@@ -39,6 +39,7 @@ return {
 					d = { "<cmd>Telescope lsp_definitions<CR>", "Show lSP definitions" },
 					i = { "<cmd>Telescope lsp_implementations<CR>", "Go to implementation" },
 					t = { "<cmd>Telescope lsp_type_definitions<CR>", "Show LSP type definitions" },
+					p = { "<cmd>Gitsigns preview_hunk<CR>", "Show Git Hunk" },
 				},
 				c = {
 					name = "+Code Action",
