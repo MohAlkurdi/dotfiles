@@ -19,18 +19,18 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				go = { "goimports-reviser", "gofumpt" },
-				php = { "pint" },
+				php = { "pint", "blade-formatter" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
-				async = false,
+				async = true,
 				timeout_ms = 500,
 			},
 		})
 		vim.keymap.set({ "n", "v" }, "<leader>p", function()
 			conform.format({
 				lsp_fallback = true,
-				async = false,
+				async = true,
 				timeout_ms = 500,
 			})
 		end, { desc = "Format file or range (in visual mode)" })

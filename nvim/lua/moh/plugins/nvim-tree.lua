@@ -18,6 +18,10 @@ return {
 				adaptive_size = true,
 				side = "right",
 			},
+
+			update_focused_file = {
+				enable = true,
+			},
 		})
 
 		-- open nvim-tree on setup
