@@ -51,6 +51,7 @@ return {
 				"pylint", -- python linter
 				"eslint_d", -- js linter
 				"pint", -- php
+				"blade-formatter", -- blade
 			},
 		})
 	end,
