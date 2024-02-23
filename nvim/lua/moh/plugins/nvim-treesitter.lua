@@ -6,9 +6,25 @@ return {
 		dependencies = {
 			"windwp/nvim-ts-autotag",
 		},
-		config = function()
+		config = function(plug, config)
 			-- import nvim-treesitter plugin
 			local treesitter = require("nvim-treesitter.configs")
+			local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+			parser_config.blade = {
+				install_info = {
+					url = "https://github.com/EmranMR/tree-sitter-blade",
+					files = { "src/parser.c" },
+					branch = "main",
+				},
+				filetype = "blade",
+			}
+
+			vim.filetype.add({
+				pattern = {
+					[".*%.blade%.php"] = "blade",
+				},
+			})
 
 			-- configure treesitter
 			treesitter.setup({ -- enable syntax highlighting
@@ -31,13 +47,12 @@ return {
 					"prisma",
 					"markdown",
 					"markdown_inline",
-					"svelte",
-					"graphql",
 					"bash",
 					"lua",
 					"vim",
 					"dockerfile",
 					"gitignore",
+					"blade",
 				},
 				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
 				context_commentstring = {

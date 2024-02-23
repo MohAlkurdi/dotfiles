@@ -59,6 +59,13 @@ return {
 					x = { ":close<CR>", "Close Split" },
 					s = { ":setlocal spell!<CR>", "Set Spell" },
 				},
+				t = {
+					name = "Terminal",
+					["`"] = { "<cmd>Sterm<cr>", "Horizontal Terminal" },
+					s = { "<cmd>Sterm<cr>", "Horizontal Terminal" },
+					t = { "<cmd>Fterm<cr>", "Terminal" },
+					v = { "<cmd>Vterm<cr>", "Vertical Terminal" },
+				},
 			},
 		})
 	end,
