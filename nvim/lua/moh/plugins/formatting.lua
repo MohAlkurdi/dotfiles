@@ -19,7 +19,8 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				go = { "goimports-reviser", "gofumpt" },
-				php = { "pint", "blade-formatter" },
+				php = { "pint" },
+				blade = { "blade-formatter" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
