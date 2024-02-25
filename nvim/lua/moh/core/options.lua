@@ -28,8 +28,8 @@ opt.guicursor = "" -- Fat Cursor (gonna have some rough time with this)
 -- turn on termguicolors for nightfly colorscheme to work
 opt.termguicolors = true
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
-opt.scrolloff = 12 -- lines to keep visible above and below the cursor when scrolling vertically.
-opt.sidescrolloff = 12 -- number of characters to keep visible to the left and right of the cursor when scrolling horizontally
+opt.scrolloff = 22 -- lines to keep visible above and below the cursor when scrolling vertically.
+opt.sidescrolloff = 22 -- number of characters to keep visible to the left and right of the cursor when scrolling horizontally
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
