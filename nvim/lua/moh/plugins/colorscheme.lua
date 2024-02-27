@@ -17,6 +17,7 @@ return {
 	config = function()
 		vim.g.sonokai_style = "atlantis" -- atlantis - andromeda - shusia - maia - espresso
 		vim.g.sonokai_enable_italic = 1
+		vim.g.sonokai_transparent_background = 1
 		vim.cmd([[colorscheme sonokai]])
 	end,
 	opts = {},
