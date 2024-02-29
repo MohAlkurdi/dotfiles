@@ -44,15 +44,14 @@ return {
 					"yaml",
 					"html",
 					"css",
-					"prisma",
 					"markdown",
 					"markdown_inline",
 					"bash",
 					"lua",
-					"vim",
 					"dockerfile",
 					"gitignore",
 					"blade",
+					"ruby",
 				},
 				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
 				context_commentstring = {

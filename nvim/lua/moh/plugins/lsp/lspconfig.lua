@@ -67,22 +67,35 @@ return {
 			on_attach = on_attach,
 		})
 
-		lspconfig["intelephense"].setup({
+		-- configure php server
+		lspconfig["phpactor"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-		-- configure prisma orm server
-		lspconfig["prismals"].setup({
+		-- configure ruby server
+		lspconfig["solargraph"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "ruby" },
 		})
 
 		-- configure emmet language server
 		lspconfig["emmet_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "php" },
+			filetypes = {
+				"html",
+				"typescriptreact",
+				"javascriptreact",
+				"css",
+				"sass",
+				"scss",
+				"less",
+				"php",
+				"blade",
+				"eruby",
+			},
 		})
 
 		-- configure python server
