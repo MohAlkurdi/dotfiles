@@ -36,7 +36,9 @@ return {
 				"prismals",
 				"pyright",
 				"intelephense",
+				"phpactor",
 				"gopls",
+				"solargraph",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -52,6 +54,7 @@ return {
 				"eslint_d", -- js linter
 				"pint", -- php
 				"blade-formatter", -- blade
+				"rubocop", -- ruby
 			},
 		})
 	end,

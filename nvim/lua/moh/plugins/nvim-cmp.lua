@@ -53,7 +53,7 @@ return {
 					else
 						fallback()
 					end
-				end, { "i", "s" }),
+				end, { "s" }),
 
 				["<S-Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
@@ -63,7 +63,7 @@ return {
 					else
 						fallback()
 					end
-				end, { "i", "s" }),
+				end, { "s" }),
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
