@@ -22,19 +22,20 @@ return {
 				php = { "pint" },
 				blade = { "blade-formatter" },
 				ruby = { "rubocop" },
-				eruby = { "htmlbeautifier" },
+				eruby = { "erb_format" },
+				-- eruby = { "htmlbeautifier" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
 				async = true,
-				timeout_ms = 500,
+				timeout_ms = 1000,
 			},
 		})
 		vim.keymap.set({ "n", "v" }, "<leader>p", function()
 			conform.format({
 				lsp_fallback = true,
 				async = true,
-				timeout_ms = 500,
+				timeout_ms = 1000,
 			})
 		end, { desc = "Format file or range (in visual mode)" })
 	end,
