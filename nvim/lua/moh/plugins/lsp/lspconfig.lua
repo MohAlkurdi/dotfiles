@@ -65,6 +65,26 @@ return {
 		lspconfig["tailwindcss"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			root_dir = lspconfig.util.root_pattern(
+				-- "tailwind.config.cjs",
+				-- "tailwind.config.js",
+				"config/tailwind.config.js",
+				-- "tailwind.config.ts",
+				-- "postcss.config.cjs",
+				-- "postcss.config.js",
+				-- "postcss.config.ts",
+				-- "package.json",
+				-- "node_modules",
+				".git"
+			),
+
+			settings = {
+				tailwindCSS = {
+					experimental = {
+						classRegex = { [[\bclass:\s*'([^']*)']], [[\bclass:\s*\"([^"]*)"]] },
+					},
+				},
+			},
 		})
 
 		-- configure php server
@@ -78,6 +98,21 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "ruby" },
+
+			settings = {
+				solargraph = {
+					diagnostics = false,
+					format = false,
+					autoformat = false,
+					formatting = false,
+				},
+			},
+			init_options = {
+				diagnostics = false,
+				format = false,
+				autoformat = false,
+				formatting = false,
+			},
 		})
 
 		-- configure emmet language server
