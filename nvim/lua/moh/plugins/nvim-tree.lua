@@ -22,6 +22,12 @@ return {
 			update_focused_file = {
 				enable = true,
 			},
+
+			ui = {
+				confirm = {
+					default_yes = true,
+				},
+			},
 		})
 
 		-- open nvim-tree on setup

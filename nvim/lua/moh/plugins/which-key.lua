@@ -18,11 +18,13 @@ return {
 					c = { "<cmd>Telescope grep_string<cr>", "Find String Under Cursor" },
 					b = { "<cmd>Telescope buffers<cr>", "Find Buffer" },
 					g = { ":LazyGit<CR>", "LazyGit" },
+					h = { "<cmd>Telescope help_tags<cr>", "Find help" },
 				},
 				b = {
 					name = "+Buffer",
 					d = { "<cmd>bdelete<CR>", "Delete" },
 					c = { ":BufferLinePickClose<CR>", "Close" },
+					a = { ":%bd<CR>", "Close All buffer" },
 				},
 				x = {
 					name = "+Trouble",
@@ -58,13 +60,6 @@ return {
 					e = { "<C-w>=", "Resize Split" },
 					x = { ":close<CR>", "Close Split" },
 					s = { ":setlocal spell!<CR>", "Set Spell" },
-				},
-				t = {
-					name = "Terminal",
-					["`"] = { "<cmd>Sterm<cr>", "Horizontal Terminal" },
-					s = { "<cmd>Sterm<cr>", "Horizontal Terminal" },
-					t = { "<cmd>Fterm<cr>", "Terminal" },
-					v = { "<cmd>Vterm<cr>", "Vertical Terminal" },
 				},
 			},
 		})

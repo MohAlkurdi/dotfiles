@@ -21,9 +21,6 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("n", "<S-l>", ":bnext<CR>")
 keymap.set("n", "<S-h>", ":bprevious<CR>")
 
--- Close terminal buffer
-keymap.set("t", "<C-w>h", "<C-\\><C-n><C-w>h", { silent = true })
-
 --------------------
 -- Plugin Keybinds
 ----------------------

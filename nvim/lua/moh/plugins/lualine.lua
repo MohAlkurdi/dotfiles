@@ -13,7 +13,7 @@ return {
 			sections = {
 				lualine_a = {
 					{
-						"filename",
+						-- "filename",
 						path = 1,
 					},
 				},
