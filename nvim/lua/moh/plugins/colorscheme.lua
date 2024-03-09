@@ -24,12 +24,33 @@
 -- }
 
 -- catppuccin Theme
+-- return {
+-- 	"catppuccin/nvim",
+-- 	name = "catppuccin",
+-- 	priority = 1000,
+-- 	lazy = false,
+-- 	config = function()
+-- 		vim.cmd([[colorscheme catppuccin-frappe]]) -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+-- 	end,
+-- }
+
+-- Lua
+
+-- poimandres Theme
 return {
-	"catppuccin/nvim",
-	name = "catppuccin",
-	priority = 1000,
+	"olivercederborg/poimandres.nvim",
 	lazy = false,
+	priority = 1000,
 	config = function()
-		vim.cmd([[colorscheme catppuccin-frappe]]) -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+		require("poimandres").setup({
+			-- leave this setup function empty for default config
+			-- or refer to the configuration section
+			-- for configuration options
+		})
+	end,
+
+	-- optionally set the colorscheme within lazy config
+	init = function()
+		vim.cmd("colorscheme poimandres")
 	end,
 }
