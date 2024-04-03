@@ -88,9 +88,10 @@ return {
 		})
 
 		-- configure php server
-		lspconfig["phpactor"].setup({
+		lspconfig["intelephense"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "php" },
 		})
 
 		-- configure ruby server
