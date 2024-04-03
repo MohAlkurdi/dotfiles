@@ -12,9 +12,10 @@ $rust\
 $golang\
 $php\
 $python\
+$ruby\
 [](fg:#212736 bg:#1d2230)\
-$time\
-[ ](fg:#1d2230)\
+$cmd_duration\
+[](fg:#1d2230)\
 \n$character"""
 
 [directory]
@@ -63,8 +64,11 @@ symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
-[time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
+[ruby]
+symbol = ""
 style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#1d2230)]($style)'
+
+[cmd_duration]
+min_time = 500
+format = 'took [$duration](bold yellow)'
