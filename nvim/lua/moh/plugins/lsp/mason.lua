@@ -34,7 +34,7 @@ return {
 				"lua_ls",
 				"emmet_ls",
 				"pyright",
-				"phpactor",
+				"intelephense",
 				"gopls",
 				"solargraph",
 			},
