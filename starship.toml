@@ -6,14 +6,14 @@ $directory\
 [](fg:#769ff0 bg:#394260)\
 $git_branch\
 $git_status\
-[](fg:#394260)\
-[](fg:#212736)\
+[](fg:#394260 bg:#212736)\
 $nodejs\
 $rust\
 $golang\
 $php\
 $python\
 $ruby\
+[](fg:#212736)\
 $cmd_duration\
 \n$character"""
 
@@ -23,7 +23,7 @@ format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = false
-readonly = "🔒"
+read_only = "🔒"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -67,8 +67,8 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [ruby]
 symbol = ""
-style = "bg:#1d2230"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#1d2230)]($style)'
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [cmd_duration]
 min_time = 500
