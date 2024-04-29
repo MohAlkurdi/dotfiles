@@ -1,32 +1,36 @@
 {
-  "workbench.tree.enableStickyScroll": true,
   "workbench.iconTheme": "symbols",
   "workbench.startupEditor": "readme",
   "workbench.sideBar.location": "right",
-  "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.activityBar.location": "top",
+  "workbench.colorTheme": "GitHub Dark Default",
 
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "custom",
   "window.restoreWindows": "none",
+  "window.confirmBeforeClose": "keyboardOnly",
+  "window.customTitleBarVisibility": "auto",
 
   "explorer.compactFolders": false,
 
-  "editor.fontSize": 15,
+  "editor.fontSize": 19,
   "editor.formatOnSave": true,
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.verticalScrollbarSize": 0,
-  "editor.fontFamily": "'Maple Mono', 'monospace', monospace",
+  "editor.fontFamily": "'Iosevka Nerd Font Mono', 'monospace'",
+  // "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'monospace', monospace",
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
   "editor.cursorStyle": "block",
-  "editor.lineHeight": 35,
-  "editor.cursorSurroundingLines": 14,
+  "editor.lineHeight": 40,
+  "editor.cursorSurroundingLines": 16,
   "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
   "editor.linkedEditing": true,
+  "editor.stickyScroll.enabled": false,
 
   "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
+  // "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
 
   "telemetry.telemetryLevel": "off",
   // VIM settings
@@ -40,6 +44,7 @@
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#77bdfb80",
   "vim.highlightedyank.duration": 200,
+
   "vim.normalModeKeyBindings": [
     // Peek Definition
     {
@@ -75,6 +80,21 @@
     {
       "before": ["<leader>", "e"],
       "commands": ["workbench.view.explorer"]
+    },
+    // Fold all
+    // {
+    //   "before": ["<leader>", "f", "a"],
+    //   "commands": ["editor.foldAll"]
+    // },
+    // Unfold all
+    {
+      "before": ["<leader>", "f", "o"],
+      "commands": ["editor.unfoldAll"]
+    },
+    // Fold level 1
+    {
+      "before": ["<leader>", "f", "a"],
+      "commands": ["editor.foldLevel2"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -199,5 +219,14 @@
   "[blade]": {
     "editor.defaultFormatter": "shufo.vscode-blade-formatter"
   },
-  "symbols.hidesExplorerArrows": false
+  "symbols.hidesExplorerArrows": false,
+  // Ruby
+  "solargraph.bundlerPath": "/home/mo/.rbenv/shims/bundler",
+  "solargraph.commandPath": "/home/mo/.rbenv/shims/solargraph",
+  "solargraph.transport": "stdio",
+  "solargraph.formatting": true,
+  "solargraph.diagnostics": true,
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  }
 }
