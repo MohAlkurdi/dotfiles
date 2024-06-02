@@ -21,7 +21,7 @@ return {
 				go = { "goimports-reviser", "gofumpt" },
 				php = { "pint" },
 				blade = { "blade-formatter" },
-				ruby = { "rubocop" },
+				ruby = { "standardrb" },
 				eruby = { "erb_format" },
 				-- eruby = { "htmlbeautifier" },
 			},
