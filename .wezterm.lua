@@ -13,15 +13,18 @@ config.window_padding = {
 }
 
 -- Font
-config.font_size = 17
--- config.font = wezterm.font("BlexMono Nerd Font") -- 16
--- config.font = wezterm.font("JetBrainsMono Nerd Font") -- 16
--- config.font = wezterm.font("CaskaydiaCove Nerd Font") -- 16
-config.font = wezterm.font("ComicShannsMono Nerd Font") -- 17
+config.font_size = 18
+-- config.font = wezterm.font("BlexMono Nerd Font") -- 17
+-- config.font = wezterm.font("JetBrainsMono Nerd Font") -- 17
+-- config.font = wezterm.font("CaskaydiaCove Nerd Font") -- 17
+config.font = wezterm.font("ComicShannsMono Nerd Font") -- 18
 config.bidi_enabled = true
 
 -- disable bell sound
 config.audible_bell = "Disabled"
+
+-- disable the title bar but enable the resizable border
+config.window_decorations = "RESIZE"
 
 -- and finally, return the configuration to wezterm
 return config
