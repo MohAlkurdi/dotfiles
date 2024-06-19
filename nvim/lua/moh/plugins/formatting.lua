@@ -17,7 +17,7 @@ return {
 				markdown = { "prettier" },
 				graphql = { "prettier" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
+				python = { "black", "isort" },
 				go = { "goimports-reviser", "gofumpt" },
 				php = { "pint" },
 				blade = { "blade-formatter" },
