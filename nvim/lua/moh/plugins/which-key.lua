@@ -15,10 +15,11 @@ return {
 					n = { "<cmd>enew<cr>", "New File" },
 					t = { ":TodoTelescope<CR>", "Find Todo" },
 					s = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
-					c = { "<cmd>Telescope grep_string<cr>", "Find String Under Cursor" },
+					-- c = { "<cmd>Telescope grep_string<cr>", "Find String Under Cursor" },
 					b = { "<cmd>Telescope buffers<cr>", "Find Buffer" },
 					g = { ":LazyGit<CR>", "LazyGit" },
 					h = { "<cmd>Telescope help_tags<cr>", "Find help" },
+					c = { ":Telescope colorscheme<CR>", "Colorscheme" },
 				},
 				b = {
 					name = "+Buffer",

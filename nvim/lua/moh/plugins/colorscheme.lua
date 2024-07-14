@@ -42,17 +42,6 @@ return {
 		end,
 	},
 
-	-- Poimandres Theme
-	{
-		"olivercederborg/poimandres.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("poimandres").setup({})
-			vim.cmd([[colorscheme poimandres]])
-		end,
-	},
-
 	-- Onedark Theme
 	{
 		"navarasu/onedark.nvim",
@@ -73,11 +62,27 @@ return {
 		end,
 	},
 
-	-- Solarized Osaka Theme
+	-- Github theme
 	{
-		"craftzdog/solarized-osaka.nvim",
+		"projekt0n/github-nvim-theme",
 		lazy = false,
 		priority = 1000,
-		opts = {},
+		config = function()
+			vim.cmd([[colorscheme github_dark]])
+		end,
+	},
+
+	-- Everforest theme
+	{
+		"neanias/everforest-nvim",
+		version = false,
+		lazy = false,
+		priority = 1000, -- make sure to load this before all the other start plugins
+		-- Optional; default configuration will be used if setup isn't called.
+		config = function()
+			require("everforest").setup({
+				-- Your config here
+			})
+		end,
 	},
 }
