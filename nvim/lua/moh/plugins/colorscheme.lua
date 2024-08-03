@@ -19,15 +19,6 @@ return {
 		opts = {},
 	},
 
-	-- Palenight Theme
-	{
-		"alexmozaidze/palenight.nvim",
-		priority = 1000,
-		config = function()
-			vim.cmd([[colorscheme palenight]])
-		end,
-	},
-
 	-- Onedark Theme
 	{
 		"navarasu/onedark.nvim",
@@ -39,10 +30,6 @@ return {
 			local transparent = true -- set to true if you would like to enable transparency
 			require("onedark").setup({
 				transparent = transparent,
-				styles = {
-					sidebars = transparent and "transparent" or "dark",
-					floats = transparent and "transparent" or "dark",
-				},
 			})
 		end,
 	},
@@ -54,6 +41,13 @@ return {
 		priority = 1000,
 		config = function()
 			vim.cmd([[colorscheme github_dark]])
+
+			local transparent = true -- set to true if you would like to enable transparency
+			require("github-theme").setup({
+				options = {
+					transparent = transparent,
+				},
+			})
 		end,
 	},
 
@@ -66,7 +60,6 @@ return {
 		-- Optional; default configuration will be used if setup isn't called.
 		config = function()
 			require("everforest").setup({
-
 				transparent_background_level = 5,
 			})
 		end,
