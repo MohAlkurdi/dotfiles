@@ -12,8 +12,9 @@ config.window_padding = {
 	bottom = 0,
 }
 
+config.color_scheme = "Tokyo Night"
+
 -- Font
--- config.line_height = 1.2
 config.font_size = 18
 -- config.font = wezterm.font("BlexMono Nerd Font") -- 17
 -- config.font = wezterm.font("JetBrainsMono Nerd Font") -- 17
@@ -30,7 +31,7 @@ config.window_decorations = "RESIZE"
 
 -- set window opacity and transparency
 config.window_background_opacity = 0.8
-config.macos_window_background_blur = 10
+-- config.macos_window_background_blur = 10
 
 -- set the tab bar to be at the bottom
 config.tab_bar_at_bottom = true
