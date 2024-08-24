@@ -28,6 +28,10 @@ return {
 					default_yes = true,
 				},
 			},
+			filters = {
+				dotfiles = false,
+				git_ignored = false,
+			},
 		})
 
 		-- open nvim-tree on setup
