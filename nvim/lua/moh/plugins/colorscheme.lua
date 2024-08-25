@@ -16,7 +16,20 @@ return {
 				},
 			})
 		end,
-		opts = {},
+	},
+
+	-- Catppuccin Theme
+	{
+		"catppuccin/nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd([[colorscheme catppuccin-frappe]])
+
+			require("catppuccin").setup({
+				transparent_background = true,
+			})
+		end,
 	},
 
 	-- Onedark Theme
@@ -27,9 +40,8 @@ return {
 		config = function()
 			vim.cmd([[colorscheme onedark]])
 
-			local transparent = true -- set to true if you would like to enable transparency
 			require("onedark").setup({
-				transparent = transparent,
+				transparent = true,
 			})
 		end,
 	},
@@ -42,10 +54,9 @@ return {
 		config = function()
 			vim.cmd([[colorscheme github_dark]])
 
-			local transparent = true -- set to true if you would like to enable transparency
 			require("github-theme").setup({
 				options = {
-					transparent = transparent,
+					transparent = true,
 				},
 			})
 		end,
@@ -56,12 +67,25 @@ return {
 		"neanias/everforest-nvim",
 		version = false,
 		lazy = false,
-		priority = 1000, -- make sure to load this before all the other start plugins
-		-- Optional; default configuration will be used if setup isn't called.
+		priority = 1000,
 		config = function()
 			require("everforest").setup({
 				transparent_background_level = 5,
 			})
+		end,
+	},
+
+	-- Sonokai theme
+	{
+		"sainnhe/sonokai",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- Optionally configure and load the colorscheme
+			-- directly inside the plugin declaration.
+			vim.g.sonokai_enable_italic = true
+			vim.cmd.colorscheme("sonokai")
+			vim.g.sonokai_transparent_background = 2
 		end,
 	},
 }
