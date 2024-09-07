@@ -3,9 +3,8 @@
   "workbench.startupEditor": "readme",
   "workbench.sideBar.location": "right",
   "workbench.activityBar.location": "top",
-  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.colorTheme": "GitHub Dark",
 
-  "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "custom",
   "window.restoreWindows": "none",
   "window.confirmBeforeClose": "keyboardOnly",
@@ -13,17 +12,19 @@
 
   "explorer.compactFolders": false,
 
-  "editor.fontSize": 19,
+  "editor.fontSize": 15,
   "editor.formatOnSave": true,
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.verticalScrollbarSize": 0,
-  "editor.fontFamily": "'Iosevka Nerd Font Mono', 'monospace'",
+  // "editor.fontFamily": "'BlexMono Nerd Font', 'monospace', monospace",
   // "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'monospace', monospace",
+  // "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'monospace', monospace",
+  // "editor.fontFamily": "'ComicShannsMono Nerd Font', 'monospace', monospace",
+  "editor.fontFamily": "'CommitMono Nerd Font', 'monospace', monospace",
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
   "editor.cursorStyle": "block",
-  "editor.lineHeight": 40,
-  "editor.cursorSurroundingLines": 16,
+  "editor.cursorSurroundingLines": 18,
   "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
   "editor.linkedEditing": true,
   "editor.stickyScroll.enabled": false,
@@ -75,6 +76,11 @@
     {
       "before": ["g", "p", "t"],
       "commands": ["editor.action.peekTypeDefinition"]
+    },
+    // show diff
+    {
+      "before": ["<leader>", "g", "p"],
+      "commands": ["editor.action.dirtydiff.next"]
     },
     // Open file tree
     {
@@ -213,16 +219,11 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[php]": {
-    "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
-  },
-  "[blade]": {
-    "editor.defaultFormatter": "shufo.vscode-blade-formatter"
-  },
+
   "symbols.hidesExplorerArrows": false,
   // Ruby
-  "solargraph.bundlerPath": "/home/mo/.rbenv/shims/bundler",
-  "solargraph.commandPath": "/home/mo/.rbenv/shims/solargraph",
+  "solargraph.bundlerPath": "/Users/mo/.rbenv/shims/bundle",
+  "solargraph.commandPath": "/Users/mo/.rbenv/shims/solargraph",
   "solargraph.transport": "stdio",
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
