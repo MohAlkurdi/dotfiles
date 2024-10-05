@@ -88,4 +88,14 @@ return {
 			vim.g.sonokai_transparent_background = 2
 		end,
 	},
+
+	-- vauge theme
+	{
+		"vague2k/vague.nvim",
+		config = function()
+			require("vague").setup({
+				transparent = true, -- don't set background
+			})
+		end,
+	},
 }
