@@ -7,7 +7,7 @@ return {
 		config = function()
 			vim.cmd([[colorscheme tokyonight]]) -- storm - moon - night - day.
 
-			local transparent = true -- set to true if you would like to enable transparency
+			local transparent = false -- set to true if you would like to enable transparency
 			require("tokyonight").setup({
 				transparent = transparent,
 				styles = {
@@ -27,7 +27,7 @@ return {
 			vim.cmd([[colorscheme catppuccin-frappe]])
 
 			require("catppuccin").setup({
-				transparent_background = true,
+				-- transparent_background = true,
 			})
 		end,
 	},
@@ -41,7 +41,7 @@ return {
 			vim.cmd([[colorscheme onedark]])
 
 			require("onedark").setup({
-				transparent = true,
+				-- transparent = true,
 			})
 		end,
 	},
@@ -56,7 +56,7 @@ return {
 
 			require("github-theme").setup({
 				options = {
-					transparent = true,
+					-- transparent = true,
 				},
 			})
 		end,
@@ -70,7 +70,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("everforest").setup({
-				transparent_background_level = 5,
+				-- transparent_background_level = 5,
 			})
 		end,
 	},
@@ -85,16 +85,18 @@ return {
 			-- directly inside the plugin declaration.
 			vim.g.sonokai_enable_italic = true
 			vim.cmd.colorscheme("sonokai")
-			vim.g.sonokai_transparent_background = 2
+			-- vim.g.sonokai_transparent_background = 2
 		end,
 	},
 
-	-- vauge theme
+	-- newpaper theme
 	{
-		"vague2k/vague.nvim",
+		"yorik1984/newpaper.nvim",
+		priority = 1000,
 		config = function()
-			require("vague").setup({
-				transparent = true, -- don't set background
+			require("newpaper").setup({
+				style = "dark",
+				-- disable_background = true, -- don't set background
 			})
 		end,
 	},
