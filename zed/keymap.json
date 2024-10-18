@@ -57,12 +57,6 @@
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
       // put key-bindings here if you want them to work only in normal mode
-      // Window movement bindings
-      // Ctrl jklk to move between panes
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
 
       // +LSP
       "space c a": "editor::ToggleCodeActions",
@@ -119,6 +113,16 @@
       "x": "project_panel::Cut",
       "c": "project_panel::Copy",
       "p": "project_panel::Paste"
+    }
+  },
+
+  {
+    "context": "Editor && vim_mode == insert &&  (showing_code_actions || showing_completions)",
+    "bindings": {
+      "shift-tab": "editor::ContextMenuPrev",
+      "ctrl-k": "editor::ContextMenuPrev",
+      "tab": "editor::ContextMenuNext",
+      "ctrl-j": "editor::ContextMenuNext"
     }
   }
 ]

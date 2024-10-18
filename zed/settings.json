@@ -27,5 +27,37 @@
   },
   "inlay_hints": {
     "enabled": true
+  },
+
+  "languages": {
+    "Ruby": {
+      "language_servers": [
+        "rubocop",
+        "solargraph",
+        "!ruby-lsp",
+        "tailwindcss-language-server"
+      ]
+    }
+  },
+
+  "lsp": {
+    "solargraph": {
+      "initialization_options": {
+        "diagnostics": true,
+        "formatting": true
+      }
+    },
+
+    "tailwindcss-language-server": {
+      "settings": {
+        "includeLanguages": {
+          "erb": "html",
+          "ruby": "html"
+        },
+        "experimental": {
+          "classRegex": ["\\bclass:\\s*['\"]([^'\"]*)['\"]"]
+        }
+      }
+    }
   }
 }
