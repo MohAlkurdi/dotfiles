@@ -1,15 +1,128 @@
-# my dotfiles
+# Dotfiles
 
-neovim and wezterm config, vscode keybindings, some wallpapers, and a hacky solutions for firefox
+Neovim, Zed, VSCode and Wezterm config & keybindings
 
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/e652f3ab-222d-4d81-aa63-10fd5dc18780">
+
 ---
 
-# Vscode Vim Key Maps
+## Installation
 
-- for neovim, you can find it in [which-key.lua](/nvim/lua/moh/plugins/which-key.lua)
+- Just copy pasta the things you need to your settings or keymaps files 😉
 
-## Normal Mode Key Bindings
+## Neovim Key Bindings
+
+<details>
+<summary>Click to expand</summary>
+
+| Category                    | Key Bindings |
+| --------------------------- | ------------ |
+| **Buffer Management**       |              |
+| Close All Buffers           | `<leader>ba` |
+| Close Buffer                | `<leader>bc` |
+| Delete Buffer               | `<leader>bd` |
+| **Code Actions**            |              |
+| Show Buffer Diagnostics     | `<leader>cD` |
+| Available Code Action       | `<leader>ca` |
+| Show Line Diagnostics       | `<leader>cd` |
+| Close Other Tabs            | `<leader>co` |
+| Smart Rename                | `<leader>cr` |
+| Restart LSP                 | `<leader>cs` |
+| Change Word Under Cursor    | `<leader>cw` |
+| **Find**                    |              |
+| Find Buffer                 | `<leader>fb` |
+| Colorscheme                 | `<leader>fc` |
+| Find File                   | `<leader>ff` |
+| LazyGit                     | `<leader>fg` |
+| Find Help                   | `<leader>fh` |
+| New File                    | `<leader>fn` |
+| Open Recent File            | `<leader>fr` |
+| Live Grep                   | `<leader>fs` |
+| Find Todo                   | `<leader>ft` |
+| **Go To**                   |              |
+| Go to Declaration           | `<leader>gD` |
+| Show LSP References         | `<leader>gR` |
+| Show LSP Definitions        | `<leader>gd` |
+| Go to Implementation        | `<leader>gi` |
+| Show Git Hunk               | `<leader>gp` |
+| Show LSP Type Definitions   | `<leader>gt` |
+| **Window Split**            |              |
+| Resize Split                | `<leader>se` |
+| Split Horizontally          | `<leader>sh` |
+| Set Spell                   | `<leader>ss` |
+| Split Vertically            | `<leader>sv` |
+| Close Split                 | `<leader>sx` |
+| **General Keymaps**         |              |
+| Exit Insert Mode            | `jk`         |
+| Fast Save                   | `<leader>w`  |
+| Move Lines Up/Down (Visual) | `J/K`        |
+| Switch to Next Buffer       | `<S-l>`      |
+| Switch to Previous Buffer   | `<S-h>`      |
+| Toggle File Explorer        | `<leader>e`  |
+
+</details>
+
+---
+
+## Zed Key Bindings
+
+<details>
+<summary>Click to expand</summary>
+
+| Category                          | Key Bindings |
+| --------------------------------- | ------------ |
+| **General Key Bindings**          |              |
+| Exit Insert Mode                  | `jk`         |
+| New Search                        | `space f s`  |
+| Toggle Hunk Diff                  | `space g p`  |
+| Toggle Inlay Hints                | `space t i`  |
+| Toggle Zen Mode                   | `space z`    |
+| Open Markdown Preview             | `space m p`  |
+| Open Markdown Preview to the Side | `space m P`  |
+| Search Word Under Cursor          | `space s w`  |
+| **LSP Actions**                   |              |
+| Toggle Code Actions               | `space c a`  |
+| Rename                            | `space c r`  |
+| Go to Definition                  | `g d`        |
+| Go to Definition (Split)          | `g D`        |
+| Go to Implementation              | `g i`        |
+| Go to Implementation (Split)      | `g I`        |
+| Go to Type Definition             | `g t`        |
+| Go to Type Definition (Split)     | `g T`        |
+| Find All References               | `g r`        |
+| Go to Next Diagnostic             | `] d`        |
+| Go to Previous Diagnostic         | `[ d`        |
+| Symbol Search                     | `space s s`  |
+| Project Symbols Search            | `space s S`  |
+| **Git**                           |              |
+| Go to Next Hunk                   | `] h`        |
+| Go to Previous Hunk               | `[ h`        |
+| **Buffers and Workspace**         |              |
+| Switch to Previous Buffer         | `shift-h`    |
+| Switch to Next Buffer             | `shift-l`    |
+| Close Active Item                 | `space b d`  |
+| Close Inactive Items              | `space c o`  |
+| Save File                         | `space w`    |
+| Toggle File Finder                | `space f f`  |
+| Toggle Left Dock                  | `space e`    |
+| **File Panel**                    |              |
+| New File                          | `a`          |
+| Rename File                       | `r`          |
+| Delete File                       | `d`          |
+| Cut File                          | `x`          |
+| Copy File                         | `c`          |
+| Paste File                        | `p`          |
+
+</details>
+
+---
+
+## VSCode Vim Key Bindings
+
+<details>
+<summary>Click to expand</summary>
+
+### Normal Mode Key Bindings
 
 | Description              | Key Bindings                                   |
 | ------------------------ | ---------------------------------------------- |
@@ -33,7 +146,7 @@ neovim and wezterm config, vscode keybindings, some wallpapers, and a hacky solu
 | Format file              | `leader p`                                     |
 | Hover                    | `<S-k>`                                        |
 
-## Visual Mode Key Bindings
+### Visual Mode Key Bindings
 
 | Description                      | Key Bindings |
 | -------------------------------- | ------------ |
@@ -41,13 +154,13 @@ neovim and wezterm config, vscode keybindings, some wallpapers, and a hacky solu
 | Move selected lines              | `K`          |
 | Select match tags in visual mode | `S-5`        |
 
-## Vim Insert Mode Key Bindings
+### Vim Insert Mode Key Bindings
 
 | Description           | Key Bindings |
 | --------------------- | ------------ |
 | Return to normal mode | `jk`         |
 
-## Other Key Bindings
+### Other Key Bindings
 
 | Description                  | Key Bindings   |
 | ---------------------------- | -------------- |
