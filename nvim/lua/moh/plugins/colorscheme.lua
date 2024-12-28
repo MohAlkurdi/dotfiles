@@ -34,14 +34,16 @@ return {
 
 	-- Onedark Theme
 	{
-		"navarasu/onedark.nvim",
+		"olimorris/onedarkpro.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
 			vim.cmd([[colorscheme onedark]])
 
-			require("onedark").setup({
-				-- transparent = true,
+			require("onedarkpro").setup({
+				options = {
+					transparency = true,
+				},
 			})
 		end,
 	},
@@ -62,19 +64,6 @@ return {
 		end,
 	},
 
-	-- Everforest theme
-	{
-		"neanias/everforest-nvim",
-		version = false,
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("everforest").setup({
-				-- transparent_background_level = 5,
-			})
-		end,
-	},
-
 	-- Sonokai theme
 	{
 		"sainnhe/sonokai",
@@ -89,14 +78,15 @@ return {
 		end,
 	},
 
-	-- newpaper theme
+	-- material theme
 	{
-		"yorik1984/newpaper.nvim",
+		"marko-cerovac/material.nvim",
 		priority = 1000,
 		config = function()
-			require("newpaper").setup({
-				style = "dark",
-				-- disable_background = true, -- don't set background
+			require("material").setup({
+				-- disable = {
+				-- 	background = true,
+				-- },
 			})
 		end,
 	},

@@ -40,7 +40,7 @@ return {
 				-- Go To
 				{ "<leader>g", group = "Go To" },
 				{ "<leader>gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", desc = "Go to declaration" },
-				{ "<leader>gR", "<cmd>Telescope lsp_references<CR>", desc = "Show LSP references" },
+				{ "<leader>gr", "<cmd>Telescope lsp_references<CR>", desc = "Show LSP references" },
 				{ "<leader>gd", "<cmd>Telescope lsp_definitions<CR>", desc = "Show lSP definitions" },
 				{ "<leader>gi", "<cmd>Telescope lsp_implementations<CR>", desc = "Go to implementation" },
 				{ "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", desc = "Show Git Hunk" },
