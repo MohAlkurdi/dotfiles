@@ -26,6 +26,6 @@ keymap.set("n", "<S-h>", ":bprevious<CR>")
 ----------------------
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- NOTE: More keymaps can be found in plugin_config/which-key.lua directory
