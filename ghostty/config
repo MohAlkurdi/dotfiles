@@ -1,0 +1,24 @@
+# Self explanatory
+cursor-style = block
+mouse-hide-while-typing = true
+macos-titlebar-style = tabs
+window-padding-balance = true
+window-save-state = tre
+# adjust-cell-height = 35% # Line height
+
+# disable ligatures
+font-feature = -dlig
+font-feature = -liga
+font-feature = -calt
+
+# Keybindings for panes/splits
+keybind = ctrl+s>\=new_split:right
+keybind = ctrl+s>-=new_split:down
+# keybind = ctrl+s>x=close_surface # CMD+w is much better IMO
+
+# Navigate between panes
+keybind = ctrl+s>h=goto_split:left
+keybind = ctrl+s>j=goto_split:bottom
+keybind = ctrl+s>k=goto_split:top
+keybind = ctrl+s>l=goto_split:right
+
