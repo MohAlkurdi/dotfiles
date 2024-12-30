@@ -1,9 +1,16 @@
+# Block cursor
+shell-integration-features = no-cursor
+
+background = #000000
+background-opacity = 0.65
+background-blur-radius = 20
+
 # Self explanatory
-cursor-style = block
+copy-on-select = clipboard
 mouse-hide-while-typing = true
 macos-titlebar-style = tabs
 window-padding-balance = true
-window-save-state = tre
+window-decoration = true
 # adjust-cell-height = 35% # Line height
 
 # disable ligatures
@@ -21,4 +28,3 @@ keybind = ctrl+s>h=goto_split:left
 keybind = ctrl+s>j=goto_split:bottom
 keybind = ctrl+s>k=goto_split:top
 keybind = ctrl+s>l=goto_split:right
-
