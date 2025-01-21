@@ -3,7 +3,6 @@
   "workbench.startupEditor": "readme",
   "workbench.sideBar.location": "right",
   "workbench.activityBar.location": "top",
-  "workbench.colorTheme": "GitHub Dark",
 
   "window.titleBarStyle": "custom",
   "window.restoreWindows": "none",
@@ -12,7 +11,7 @@
 
   "explorer.compactFolders": false,
 
-  "editor.fontSize": 15,
+  // "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.verticalScrollbarSize": 0,
@@ -20,11 +19,14 @@
   // "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'monospace', monospace",
   // "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'monospace', monospace",
   // "editor.fontFamily": "'ComicShannsMono Nerd Font', 'monospace', monospace",
-  "editor.fontFamily": "'CommitMono Nerd Font', 'monospace', monospace",
+  // "editor.fontFamily": "'CommitMono Nerd Font', 'monospace', monospace",
+  // "editor.fontFamily": "'Departure Mono', 'monospace', monospace",
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
   "editor.cursorStyle": "block",
   "editor.cursorSurroundingLines": 18,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "solid",
   "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
   "editor.linkedEditing": true,
   "editor.stickyScroll.enabled": false,
@@ -32,6 +34,7 @@
   "terminal.integrated.copyOnSelection": true,
   // "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "terminal.external.osxExec": "ghostty.app",
 
   "telemetry.telemetryLevel": "off",
   // VIM settings
@@ -49,32 +52,32 @@
   "vim.normalModeKeyBindings": [
     // Peek Definition
     {
-      "before": ["g", "p", "d"],
+      "before": ["<leader>", "g", "p", "d"],
       "commands": ["editor.action.peekDefinition"]
     },
     //  Go to Implementations
     {
-      "before": ["g", "i"],
+      "before": ["<leader>", "g", "i"],
       "commands": ["editor.action.goToImplementation"]
     },
     // Peek Implementations
     {
-      "before": ["g", "p", "i"],
+      "before": ["<leader>", "g", "p", "i"],
       "commands": ["editor.action.peekImplementation"]
     },
     // Go to References
     {
-      "before": ["g", "r"],
+      "before": ["<leader>", "g", "r"],
       "commands": ["editor.action.referenceSearch.trigger"]
     },
     // Go to Type Definition
     {
-      "before": ["g", "t"],
+      "before": ["<leader>", "g", "t"],
       "commands": ["editor.action.goToTypeDefinition"]
     },
     // Peek Type Definition
     {
-      "before": ["g", "p", "t"],
+      "before": ["<leader>", "g", "p", "t"],
       "commands": ["editor.action.peekTypeDefinition"]
     },
     // show diff
@@ -219,15 +222,19 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
   "symbols.hidesExplorerArrows": false,
   // Ruby
   "solargraph.bundlerPath": "/Users/mo/.rbenv/shims/bundle",
   "solargraph.commandPath": "/Users/mo/.rbenv/shims/solargraph",
   "solargraph.transport": "stdio",
-  "solargraph.formatting": true,
-  "solargraph.diagnostics": true,
+  "solargraph.formatting": false,
+  "solargraph.diagnostics": false,
   "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
+    "vscodevim.vim": 1,
+    "asvetliakov.vscode-neovim": 1
   }
 }
