@@ -53,6 +53,23 @@ return {
 				{ "<leader>ss", ":setlocal spell!<CR>", desc = "Set Spell" },
 				{ "<leader>sv", "<C-w>v", desc = "Split Vertically" },
 				{ "<leader>sx", ":close<CR>", desc = "Close Split" },
+
+				-- Test
+				{ "<leader>t", group = "Test" },
+				{
+					"<leader>tt",
+					function()
+						require("neotest").run.run()
+					end,
+					desc = "Run the test under the cursor",
+				},
+				{
+					"<leader>tf",
+					function()
+						require("neotest").run.run(vim.fn.expand("%"))
+					end,
+					desc = "Run test in the current file",
+				},
 			},
 		})
 	end,

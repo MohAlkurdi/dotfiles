@@ -7,7 +7,7 @@ return {
 		config = function()
 			vim.cmd([[colorscheme tokyonight]]) -- storm - moon - night - day.
 
-			local transparent = false -- set to true if you would like to enable transparency
+			local transparent = true -- set to true if you would like to enable transparency
 			require("tokyonight").setup({
 				transparent = transparent,
 				styles = {
@@ -27,7 +27,7 @@ return {
 			vim.cmd([[colorscheme catppuccin-frappe]])
 
 			require("catppuccin").setup({
-				-- transparent_background = true,
+				transparent_background = true,
 			})
 		end,
 	},
@@ -58,7 +58,7 @@ return {
 
 			require("github-theme").setup({
 				options = {
-					-- transparent = true,
+					transparent = true,
 				},
 			})
 		end,
@@ -74,7 +74,7 @@ return {
 			-- directly inside the plugin declaration.
 			vim.g.sonokai_enable_italic = true
 			vim.cmd.colorscheme("sonokai")
-			-- vim.g.sonokai_transparent_background = 2
+			vim.g.sonokai_transparent_background = 2
 		end,
 	},
 
@@ -84,9 +84,9 @@ return {
 		priority = 1000,
 		config = function()
 			require("material").setup({
-				-- disable = {
-				-- 	background = true,
-				-- },
+				disable = {
+					background = true,
+				},
 			})
 		end,
 	},

@@ -95,25 +95,10 @@ return {
 		})
 
 		-- configure ruby server
-		lspconfig["solargraph"].setup({
+		lspconfig["ruby_lsp"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "ruby" },
-
-			settings = {
-				solargraph = {
-					diagnostics = false,
-					format = false,
-					autoformat = false,
-					formatting = false,
-				},
-			},
-			init_options = {
-				diagnostics = false,
-				format = false,
-				autoformat = false,
-				formatting = false,
-			},
 		})
 
 		-- configure emmet language server
