@@ -1,57 +1,57 @@
 return {
-	"williamboman/mason.nvim",
+	"mason-org/mason-lspconfig.nvim",
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
+		{
+			"mason-org/mason.nvim",
+			opts = {
+				-- the extra registry provides `roslyn` (same C# server version as VS Code)
+				registries = {
+					"github:mason-org/mason-registry",
+					"github:Crashdummyy/mason-registry",
+				},
+				ui = {
+					icons = {
+						package_installed = "✓",
+						package_pending = "➜",
+						package_uninstalled = "✗",
+					},
+				},
+			},
+		},
+		"neovim/nvim-lspconfig",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
-		-- import mason
-		local mason = require("mason")
-
-		-- import mason-lspconfig
-		local mason_lspconfig = require("mason-lspconfig")
-
-		local mason_tool_installer = require("mason-tool-installer")
-
-		-- enable mason and configure icons
-		mason.setup({
-			ui = {
-				icons = {
-					package_installed = "✓",
-					package_pending = "➜",
-					package_uninstalled = "✗",
-				},
+		-- installed language servers are enabled automatically
+		require("mason-lspconfig").setup({
+			automatic_enable = {
+				exclude = { "stylua" }, -- formatter only (conform), not a language server
 			},
 		})
 
-		mason_lspconfig.setup({
-			-- list of servers for mason to install
+		require("mason-tool-installer").setup({
 			ensure_installed = {
-				"ts_ls",
+				-- language servers
+				"lua_ls",
+				"gopls",
+				"vtsls", -- javascript / typescript / react
+				"eslint",
+				"astro",
+				"tailwindcss",
 				"html",
 				"cssls",
-				"tailwindcss",
-				"lua_ls",
-				"emmet_ls",
-				"pyright",
-				"phpactor",
-				"gopls",
-			},
-			-- auto-install configured servers (with lspconfig)
-			automatic_installation = true, -- not the same as ensure_installed
-		})
+				"emmet_language_server",
+				"intelephense", -- php
+				"roslyn", -- c# (started by roslyn.nvim)
 
-		mason_tool_installer.setup({
-			ensure_installed = {
-				"prettier", -- prettier formatter
+				-- formatters & linters
 				"stylua", -- lua formatter
-				-- "isort", -- python formatter
-				"black", -- python formatter
-				"pylint", -- python linter
-				"eslint_d", -- js linter
-				"pint", -- php
+				"prettierd", -- js/ts/css/html/json/markdown formatter
+				"gofumpt", -- go formatter
+				"goimports", -- go imports
+				"golangci-lint", -- go linter
+				"csharpier", -- c# formatter
 				"blade-formatter", -- blade
-				"rubocop", -- ruby
 			},
 		})
 	end,

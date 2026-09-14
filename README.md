@@ -10,55 +10,133 @@ Neovim, Zed, VSCode and Wezterm config & keybindings
 
 - Just copy pasta the things you need to your settings or keymaps files 😉
 
-## Neovim Key Bindings
+## Neovim
+
+Requires **Neovim 0.12+**. Plugins are managed by [lazy.nvim](https://github.com/folke/lazy.nvim), language servers & formatters by [Mason](https://github.com/mason-org/mason.nvim).
+
+Languages: Go, C#, JavaScript / TypeScript / React, Astro, Lua, Tailwind, HTML / CSS, PHP / Laravel / Blade.
+
+### Setup
+
+```sh
+brew install neovim go tree-sitter-cli ripgrep fd lazygit
+ln -s "$PWD/nvim" ~/.config/nvim
+nvim # plugins, parsers and language servers install on first start
+```
+
+### Key Bindings
 
 <details>
 <summary>Click to expand</summary>
 
-| Category                    | Key Bindings |
-| --------------------------- | ------------ |
-| **Buffer Management**       |              |
-| Close All Buffers           | `<leader>ba` |
-| Close Buffer                | `<leader>bc` |
-| Delete Buffer               | `<leader>bd` |
-| **Code Actions**            |              |
-| Show Buffer Diagnostics     | `<leader>cD` |
-| Available Code Action       | `<leader>ca` |
-| Show Line Diagnostics       | `<leader>cd` |
-| Close Other Tabs            | `<leader>co` |
-| Smart Rename                | `<leader>cr` |
-| Restart LSP                 | `<leader>cs` |
-| Change Word Under Cursor    | `<leader>cw` |
-| **Find**                    |              |
-| Find Buffer                 | `<leader>fb` |
-| Colorscheme                 | `<leader>fc` |
-| Find File                   | `<leader>ff` |
-| LazyGit                     | `<leader>fg` |
-| Find Help                   | `<leader>fh` |
-| New File                    | `<leader>fn` |
-| Open Recent File            | `<leader>fr` |
-| Live Grep                   | `<leader>fs` |
-| Find Todo                   | `<leader>ft` |
-| **Go To**                   |              |
-| Go to Declaration           | `<leader>gD` |
-| Show LSP References         | `<leader>gR` |
-| Show LSP Definitions        | `<leader>gd` |
-| Go to Implementation        | `<leader>gi` |
-| Show Git Hunk               | `<leader>gp` |
-| Show LSP Type Definitions   | `<leader>gt` |
-| **Window Split**            |              |
-| Resize Split                | `<leader>se` |
-| Split Horizontally          | `<leader>sh` |
-| Set Spell                   | `<leader>ss` |
-| Split Vertically            | `<leader>sv` |
-| Close Split                 | `<leader>sx` |
-| **General Keymaps**         |              |
-| Exit Insert Mode            | `jk`         |
-| Fast Save                   | `<leader>w`  |
-| Move Lines Up/Down (Visual) | `J/K`        |
-| Switch to Next Buffer       | `<S-l>`      |
-| Switch to Previous Buffer   | `<S-h>`      |
-| Toggle File Explorer        | `<leader>e`  |
+`<leader>` is `Space`. Press `<leader>` and wait to see every binding in which-key, or search them with `<leader>fk`.
+
+| Category                        | Key Bindings          |
+| ------------------------------- | --------------------- |
+| **General**                     |                       |
+| Exit Insert Mode                | `jk`                  |
+| Fast Save                       | `<leader>w`           |
+| Move Lines Up/Down (Visual)     | `J/K`                 |
+| Switch to Next/Previous Buffer  | `<S-l>` / `<S-h>`     |
+| Move Between Windows            | `<C-h/j/k/l>`         |
+| Toggle File Explorer            | `<leader>e`           |
+| Format File or Range            | `<leader>p`           |
+| Trigger Linting                 | `<leader>l`           |
+| Flash Jump / Treesitter Select  | `s` / `S`             |
+| Add Comment Below/Above         | `gco` / `gcO`         |
+| Toggle Comment                  | `gcc` / `gc`          |
+| Toggle Terminal                 | `<C-/>`               |
+| Zen Mode / Zoom Window          | `<leader>z` / `<leader>Z` |
+| Scratch Buffer                  | `<leader>.`           |
+| Notification History            | `<leader>n`           |
+| **Buffer Management**           |                       |
+| Close All Buffers               | `<leader>ba`          |
+| Close Buffer                    | `<leader>bc`          |
+| Delete Buffer                   | `<leader>bd`          |
+| Close Other Buffers             | `<leader>bo`          |
+| **Code Actions**                |                       |
+| Show Buffer Diagnostics         | `<leader>cD`          |
+| Available Code Action           | `<leader>ca`          |
+| Show Line Diagnostics           | `<leader>cd`          |
+| LSP Info                        | `<leader>cl`          |
+| Close Other Tabs                | `<leader>co`          |
+| Smart Rename                    | `<leader>cr`          |
+| Rename File (updates imports)   | `<leader>cR`          |
+| Restart LSP                     | `<leader>cs`          |
+| Change Word Under Cursor        | `<leader>cw`          |
+| **Find**                        |                       |
+| Smart Find Files                | `<leader><space>`     |
+| Grep                            | `<leader>/`           |
+| Find Buffer                     | `<leader>fb`          |
+| Colorscheme                     | `<leader>fc`          |
+| Find Config File                | `<leader>fC`          |
+| Workspace Diagnostics           | `<leader>fd`          |
+| Find File                       | `<leader>ff`          |
+| LazyGit                         | `<leader>fg`          |
+| Find Help                       | `<leader>fh`          |
+| Keymaps                         | `<leader>fk`          |
+| New File                        | `<leader>fn`          |
+| Document / Workspace Symbols    | `<leader>fo` / `<leader>fO` |
+| Open Recent File                | `<leader>fr`          |
+| Resume Last Search              | `<leader>fR`          |
+| Live Grep                       | `<leader>fs`          |
+| Find Todo                       | `<leader>ft`          |
+| Undo History                    | `<leader>fu`          |
+| Grep Word / Selection           | `<leader>fw`          |
+| **Go To**                       |                       |
+| Go to Definition                | `gd` / `<leader>gd`   |
+| Go to Declaration               | `gD` / `<leader>gD`   |
+| Incoming / Outgoing Calls       | `<leader>gc` / `<leader>gC` |
+| Go to Implementation            | `<leader>gi`          |
+| Show Git Hunk                   | `<leader>gp`          |
+| Show LSP References             | `<leader>gr`          |
+| Show LSP Type Definitions       | `<leader>gt`          |
+| Hover Documentation             | `K`                   |
+| Next/Previous Diagnostic        | `]d` / `[d`           |
+| Next/Previous Reference         | `]]` / `[[`           |
+| Next/Previous Todo              | `]t` / `[t`           |
+| Next/Previous Function          | `]f` / `[f`           |
+| Next/Previous Argument          | `]a` / `[a`           |
+| Pick Breadcrumb Symbol          | `<leader>;`           |
+| **Text Objects**                |                       |
+| Function / Class / Argument     | `af` `if` / `ac` `ic` / `aa` `ia` |
+| Git Hunk                        | `ih`                  |
+| **Git**                         |                       |
+| Next/Previous Hunk              | `]h` / `[h`           |
+| Stage / Unstage Hunk            | `<leader>hs`          |
+| Reset Hunk                      | `<leader>hr`          |
+| Stage / Reset Buffer            | `<leader>hS` / `<leader>hR` |
+| Preview Hunk Inline             | `<leader>hp`          |
+| Blame Line / Toggle Line Blame  | `<leader>hb` / `<leader>hB` |
+| Diff View / Close Diff View     | `<leader>hd` / `<leader>hq` |
+| File History / Repo History     | `<leader>hf` / `<leader>hF` |
+| Git Log / Branches / Status     | `<leader>hl` / `<leader>hc` / `<leader>hg` |
+| Open in Browser (GitHub)        | `<leader>ho`          |
+| **Trouble**                     |                       |
+| Diagnostics / Buffer Diagnostics | `<leader>xx` / `<leader>xX` |
+| Symbols Outline                 | `<leader>xs`          |
+| LSP Definitions / References    | `<leader>xl`          |
+| Quickfix / Location List        | `<leader>xq` / `<leader>xL` |
+| **Toggles**                     |                       |
+| Format on Save (global / buffer) | `<leader>uf` / `<leader>uF` |
+| Inlay Hints                     | `<leader>uh`          |
+| Diagnostics                     | `<leader>ud`          |
+| Wrap                            | `<leader>uw`          |
+| Line / Relative Numbers         | `<leader>ul` / `<leader>uL` |
+| Indent Guides                   | `<leader>ug`          |
+| Treesitter Highlighting         | `<leader>uT`          |
+| **Window Split**                |                       |
+| Resize Split                    | `<leader>se`          |
+| Split Horizontally              | `<leader>sh`          |
+| Set Spell                       | `<leader>ss`          |
+| Split Vertically                | `<leader>sv`          |
+| Close Split                     | `<leader>sx`          |
+| **Completion (Insert Mode)**     |                       |
+| Next/Previous Suggestion        | `<C-j>` / `<C-k>` or `<Tab>` / `<S-Tab>` |
+| Accept                          | `<CR>`                |
+| Open / Close Menu               | `<C-Space>` / `<C-e>` |
+| Scroll Docs                     | `<C-b>` / `<C-f>`     |
+| Signature Help                  | `<C-s>`               |
 
 </details>
 

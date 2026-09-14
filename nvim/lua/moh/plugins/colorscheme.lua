@@ -1,93 +1,40 @@
+local transparent = true -- set to false to get the theme backgrounds back
+
 return {
-	-- Tokyonight Theme
+	-- Tokyonight Theme (default)
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme tokyonight]]) -- storm - moon - night - day.
-
-			local transparent = true -- set to true if you would like to enable transparency
 			require("tokyonight").setup({
+				style = "night", -- storm - moon - night - day
 				transparent = transparent,
 				styles = {
 					sidebars = transparent and "transparent" or "dark",
 					floats = transparent and "transparent" or "dark",
 				},
 			})
+			vim.cmd.colorscheme("tokyonight")
 		end,
 	},
 
-	-- Catppuccin Theme
+	-- Other themes, loaded only when picked with <leader>fc
 	{
 		"catppuccin/nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd([[colorscheme catppuccin-frappe]])
-
-			require("catppuccin").setup({
-				transparent_background = true,
-			})
-		end,
+		name = "catppuccin",
+		lazy = true,
+		opts = { transparent_background = transparent },
 	},
-
-	-- Onedark Theme
 	{
 		"olimorris/onedarkpro.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd([[colorscheme onedark]])
-
-			require("onedarkpro").setup({
-				options = {
-					transparency = true,
-				},
-			})
-		end,
+		lazy = true,
+		opts = { options = { transparency = transparent } },
 	},
-
-	-- Github theme
 	{
 		"projekt0n/github-nvim-theme",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd([[colorscheme github_dark]])
-
-			require("github-theme").setup({
-				options = {
-					transparent = true,
-				},
-			})
-		end,
-	},
-
-	-- Sonokai theme
-	{
-		"sainnhe/sonokai",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			-- Optionally configure and load the colorscheme
-			-- directly inside the plugin declaration.
-			vim.g.sonokai_enable_italic = true
-			vim.cmd.colorscheme("sonokai")
-			vim.g.sonokai_transparent_background = 2
-		end,
-	},
-
-	-- material theme
-	{
-		"marko-cerovac/material.nvim",
-		priority = 1000,
-		config = function()
-			require("material").setup({
-				disable = {
-					background = true,
-				},
-			})
-		end,
+		name = "github-theme",
+		lazy = true,
+		opts = { options = { transparent = transparent } },
 	},
 }

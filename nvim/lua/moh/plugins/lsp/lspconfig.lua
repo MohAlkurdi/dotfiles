@@ -2,165 +2,135 @@ return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
+		"mason-org/mason-lspconfig.nvim",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
-		-- import lspconfig plugin
-		local lspconfig = require("lspconfig")
-
-		-- import cmp-nvim-lsp plugin
-		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-		local keymap = vim.keymap -- for conciseness
-
-		local opts = { noremap = true, silent = true }
-		local on_attach = function(client, bufnr)
-			opts.buffer = bufnr
-
-			-- set some keybinds (More of the keybindings are in which-key.lua file)
-			opts.desc = "Go to previous diagnostic"
-			keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
-
-			opts.desc = "Go to next diagnostic"
-			keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
-
-			opts.desc = "Show documentation for what is under cursor"
-			keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
-
-			opts.desc = "Restart LSP"
-			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-		end
-
-		-- used to enable autocompletion (assign to every lsp server config)
-		local capabilities = cmp_nvim_lsp.default_capabilities()
-
-		-- Change the Diagnostic symbols in the sign column (gutter)
-		-- (not in youtube nvim video)
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
-
-		-- configure html server
-		lspconfig["html"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure typescript server with plugin
-		lspconfig["ts_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure css server
-		lspconfig["cssls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure tailwindcss server
-		lspconfig["tailwindcss"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			root_dir = lspconfig.util.root_pattern(
-				-- "tailwind.config.cjs",
-				-- "tailwind.config.js",
-				"config/tailwind.config.js",
-				-- "tailwind.config.ts",
-				-- "postcss.config.cjs",
-				-- "postcss.config.js",
-				-- "postcss.config.ts",
-				-- "package.json",
-				-- "node_modules",
-				".git"
-			),
-
-			settings = {
-				tailwindCSS = {
-					experimental = {
-						classRegex = { [[\bclass:\s*'([^']*)']], [[\bclass:\s*\"([^"]*)"]] },
-					},
+		-- Diagnostics: signs in the gutter, inline text and rounded floats
+		vim.diagnostic.config({
+			severity_sort = true,
+			float = { source = true },
+			underline = true,
+			virtual_text = { spacing = 2, source = "if_many" },
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = " ",
+					[vim.diagnostic.severity.WARN] = " ",
+					[vim.diagnostic.severity.HINT] = "󰠠 ",
+					[vim.diagnostic.severity.INFO] = " ",
 				},
 			},
 		})
 
-		-- phpactor
-		lspconfig["phpactor"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "php" },
+		-- Buffer-local keymaps once a language server attaches.
+		-- Neovim already provides: K (hover), grn (rename), gra (code action),
+		-- grr (references), gri (implementation), grt (type definition),
+		-- gO (document symbols), [d / ]d (diagnostics), <C-s> (signature help in insert mode)
+		-- More LSP keymaps are in which-key.lua under <leader>c and <leader>g
+		vim.api.nvim_create_autocmd("LspAttach", {
+			group = vim.api.nvim_create_augroup("moh-lsp-attach", { clear = true }),
+			callback = function(event)
+				local map = function(keys, func, desc)
+					vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
+				end
+
+				map("gd", function()
+					Snacks.picker.lsp_definitions()
+				end, "Go to definition")
+				map("gD", vim.lsp.buf.declaration, "Go to declaration")
+				map("<leader>rs", "<cmd>lsp restart<CR>", "Restart LSP")
+
+				-- highlight references of the word under the cursor
+				local client = vim.lsp.get_client_by_id(event.data.client_id)
+				if client and client:supports_method("textDocument/documentHighlight", event.buf) then
+					local group = vim.api.nvim_create_augroup("moh-lsp-highlight", { clear = false })
+					vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+						buffer = event.buf,
+						group = group,
+						callback = vim.lsp.buf.document_highlight,
+					})
+					vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+						buffer = event.buf,
+						group = group,
+						callback = vim.lsp.buf.clear_references,
+					})
+				end
+			end,
 		})
 
-		-- configure ruby server
-		lspconfig["ruby_lsp"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "ruby" },
-		})
-
-		-- configure emmet language server
-		lspconfig["emmet_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = {
-				"html",
-				"typescriptreact",
-				"javascriptreact",
-				"css",
-				"sass",
-				"scss",
-				"less",
-				"php",
-				"blade",
-				"eruby",
-			},
-		})
-
-		-- configure python server
-		lspconfig["pyright"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "python" },
-		})
-
-		-- configure go server
-		lspconfig["gopls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			cmd = { "gopls" },
-			filetypes = { "go", "gomod", "gowork", "gotmpl" },
-			root_dir = lspconfig.util.root_pattern("go.mod", "go.work", ".git"),
+		-- Server specific settings (merged on top of nvim-lspconfig defaults).
+		-- Servers are enabled by mason-lspconfig once installed.
+		vim.lsp.config("gopls", {
 			settings = {
 				gopls = {
-					analyses = {
-						unusedparams = true,
-					},
+					gofumpt = true,
+					staticcheck = true,
 					completeUnimported = true,
 					usePlaceholders = true,
+					analyses = {
+						unusedparams = true,
+						unusedvariable = true,
+					},
+					hints = {
+						assignVariableTypes = true,
+						compositeLiteralFields = true,
+						constantValues = true,
+						functionTypeParameters = true,
+						parameterNames = true,
+						rangeVariableTypes = true,
+					},
 				},
 			},
 		})
 
-		-- configure lua server (with special settings)
-		lspconfig["lua_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = { -- custom settings for lua
-				Lua = {
-					-- make the language server recognize "vim" global
-					diagnostics = {
-						globals = { "vim" },
-					},
-					workspace = {
-						-- make language server aware of runtime files
-						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
-						},
-					},
+		local ts_inlay_hints = {
+			parameterNames = { enabled = "literals" },
+			parameterTypes = { enabled = true },
+			variableTypes = { enabled = false },
+			propertyDeclarationTypes = { enabled = true },
+			functionLikeReturnTypes = { enabled = true },
+			enumMemberValues = { enabled = true },
+		}
+		vim.lsp.config("vtsls", {
+			settings = {
+				complete_function_calls = true,
+				vtsls = {
+					enableMoveToFileCodeAction = true,
+					autoUseWorkspaceTsdk = true,
+				},
+				typescript = {
+					updateImportsOnFileMove = { enabled = "always" },
+					suggest = { completeFunctionCalls = true },
+					inlayHints = ts_inlay_hints,
+				},
+				javascript = {
+					updateImportsOnFileMove = { enabled = "always" },
+					inlayHints = ts_inlay_hints,
+				},
+			},
+		})
+
+		vim.lsp.config("emmet_language_server", {
+			filetypes = {
+				"html",
+				"css",
+				"scss",
+				"javascriptreact",
+				"typescriptreact",
+				"astro",
+				"blade",
+				"php",
+			},
+		})
+
+		vim.lsp.config("roslyn", {
+			settings = {
+				["csharp|inlay_hints"] = {
+					csharp_enable_inlay_hints_for_implicit_object_creation = true,
+					csharp_enable_inlay_hints_for_implicit_variable_types = true,
+				},
+				["csharp|code_lens"] = {
+					dotnet_enable_references_code_lens = true,
 				},
 			},
 		})

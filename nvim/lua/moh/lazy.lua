@@ -1,6 +1,6 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
+if not vim.uv.fs_stat(lazypath) then
+	local out = vim.fn.system({
 		"git",
 		"clone",
 		"--filter=blob:none",
@@ -8,7 +8,24 @@ if not vim.loop.fs_stat(lazypath) then
 		"--branch=stable", -- latest stable release
 		lazypath,
 	})
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({ { "Failed to clone lazy.nvim:\n", "ErrorMsg" }, { out, "WarningMsg" } }, true, {})
+		os.exit(1)
+	end
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "moh.plugins" }, { import = "moh.plugins.lsp" } })
+require("lazy").setup({
+	spec = {
+		{ import = "moh.plugins" },
+		{ import = "moh.plugins.lsp" },
+	},
+	install = { colorscheme = { "tokyonight" } },
+	change_detection = { notify = false },
+	rocks = { enabled = false },
+	performance = {
+		rtp = {
+			disabled_plugins = { "gzip", "netrwPlugin", "tarPlugin", "tohtml", "tutor", "zipPlugin" },
+		},
+	},
+})
