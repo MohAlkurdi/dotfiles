@@ -1,6 +1,6 @@
 # Dotfiles
 
-Neovim, Zed, VSCode and Wezterm config & keybindings
+Neovim, VSCode and Wezterm config & keybindings
 
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/e652f3ab-222d-4d81-aa63-10fd5dc18780">
 
@@ -137,59 +137,6 @@ nvim # plugins, parsers and language servers install on first start
 | Open / Close Menu               | `<C-Space>` / `<C-e>` |
 | Scroll Docs                     | `<C-b>` / `<C-f>`     |
 | Signature Help                  | `<C-s>`               |
-
-</details>
-
----
-
-## Zed Key Bindings
-
-<details>
-<summary>Click to expand</summary>
-
-| Category                          | Key Bindings |
-| --------------------------------- | ------------ |
-| **General Key Bindings**          |              |
-| Exit Insert Mode                  | `jk`         |
-| New Search                        | `space f s`  |
-| Toggle Hunk Diff                  | `space g p`  |
-| Toggle Inlay Hints                | `space t i`  |
-| Toggle Zen Mode                   | `space z`    |
-| Open Markdown Preview             | `space m p`  |
-| Open Markdown Preview to the Side | `space m P`  |
-| Search Word Under Cursor          | `space s w`  |
-| **LSP Actions**                   |              |
-| Toggle Code Actions               | `space c a`  |
-| Rename                            | `space c r`  |
-| Go to Definition                  | `g d`        |
-| Go to Definition (Split)          | `g D`        |
-| Go to Implementation              | `g i`        |
-| Go to Implementation (Split)      | `g I`        |
-| Go to Type Definition             | `g t`        |
-| Go to Type Definition (Split)     | `g T`        |
-| Find All References               | `g r`        |
-| Go to Next Diagnostic             | `] d`        |
-| Go to Previous Diagnostic         | `[ d`        |
-| Symbol Search                     | `space s s`  |
-| Project Symbols Search            | `space s S`  |
-| **Git**                           |              |
-| Go to Next Hunk                   | `] h`        |
-| Go to Previous Hunk               | `[ h`        |
-| **Buffers and Workspace**         |              |
-| Switch to Previous Buffer         | `shift-h`    |
-| Switch to Next Buffer             | `shift-l`    |
-| Close Active Item                 | `space b d`  |
-| Close Inactive Items              | `space c o`  |
-| Save File                         | `space w`    |
-| Toggle File Finder                | `space f f`  |
-| Toggle Left Dock                  | `space e`    |
-| **File Panel**                    |              |
-| New File                          | `a`          |
-| Rename File                       | `r`          |
-| Delete File                       | `d`          |
-| Cut File                          | `x`          |
-| Copy File                         | `c`          |
-| Paste File                        | `p`          |
 
 </details>
 
